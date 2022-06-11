@@ -21,14 +21,14 @@ services:
       - ./mysql/my.cnf:/etc/mysql/my.cnf
 
   schemaspy:
-    build: ./schemaspy
+    build: ./containers/schemaspy
     image: schemaspy/schemaspy
     depends_on:
       - db
     volumes:
-      - ./schemaspy/output:/output
-      - ./schemaspy/config/schemaspy.properties:/app/schemaspy.properties:ro
-      - ./schemaspy/config/start.sh:/app/start.sh:ro
+      - ./containers/schemaspy/output:/output
+      - ./containers/schemaspy/config/schemaspy.properties:/app/schemaspy.properties:ro
+      - ./containers/schemaspy/config/start.sh:/app/start.sh:ro
     container_name: "schemaspy"
     command: "/bin/sh /app/start.sh"
     # command: "java -jar schemaspy.jar -vizjs "
