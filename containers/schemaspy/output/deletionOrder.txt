@@ -1,4 +1,0 @@
-sales
-web_log
-products
-customers
