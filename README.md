@@ -1,13 +1,9 @@
 ## Installation
 
-- mysql学習用総合環境
-- schemaspyのM1対応
-- [画面（コンテナ起動後）](http://localhost:4000/)
-
 ### インストール
 
 ```
-git clone https://github.com/kazutotakeuchi-32/schemaspy_docker.git
+git clone https://github.com/kazutotakeuchi-32/docker_php_fpm2.git
 ```
 
 ## Usage 
@@ -22,10 +18,7 @@ docker-compose build
 docker-compose up
 ```
 ### コンテナ起動時フロー
-1. nginx_schemaspy,dbコンテナを先に起動
-2. dbコンテナでmysqlサーバを立ち上げ
-3. mysqlサーバに接続を確認後、schemaspyコンテナでコマンドを実行
-4. localhost:4000にschemaspyのページが表示される
+
 
 ### mysql接続
 
