@@ -18,7 +18,12 @@ docker-compose build
 docker-compose up
 ```
 ### コンテナ図
-<img src="https://i.gyazo.com/4d8220c357ffbe39dbc11b0ddc4c61a1.png">
+<img src="https://i.gyazo.com/4d8220c357ffbe39dbc11b0ddc4c61a1.png"> <br/>
+
+- webコンテナをリバースプロキシーとし、アプリケーションサーバのphpコンテナにアクセス
+- schemaspyコンテナでdbコンテナに接続してDBドキュメントを作成
+- schemaspy_nginxでドキュメントを表示
+
 
 ### URL
 - [schemaspyドキュメント](http://localhost:3000/)
