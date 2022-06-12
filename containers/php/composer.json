@@ -1,0 +1,9 @@
+{
+  "name": "root/html",
+  "authors": [
+      {
+          "name": "skip"
+      }
+  ],
+  "require": {}
+}

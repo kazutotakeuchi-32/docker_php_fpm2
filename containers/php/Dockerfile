@@ -5,8 +5,12 @@ RUN apt update && apt install -y procps && apt install -y sudo && apt install -y
 RUN mkdir -p /app/tmp
 COPY . . 
 
+# security
 RUN echo "security.limit_extensions = .php .php3 .php4 .php5 .php7 .css .js .htm .html .phtml .pl .py .rb .sh .fcgi .cgi .asp .aspx .php4 .php5 .php7 .phps .phtml .fcgi .cgi .asp .aspx .php4 .php5 .php7 .phps .phtml" >> /usr/local/etc/php-fpm.d/www.conf.default
 RUN echo "security.limit_extensions = .php .php3 .php4 .php5 .php7 .css .js .htm .html .phtml .pl .py .rb .sh .fcgi .cgi .asp .aspx .php4 .php5 .php7 .phps .phtml .fcgi .cgi .asp .aspx .php4 .php5 .php7 .phps .phtml" >> /usr/local/etc/php-fpm.d/www.conf
+
+# composer install 
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 EXPOSE 8000
 EXPOSE 9000
