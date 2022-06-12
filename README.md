@@ -18,6 +18,7 @@ docker-compose build
 docker-compose up
 ```
 ### コンテナ図
+<img src="https://i.gyazo.com/4d8220c357ffbe39dbc11b0ddc4c61a1.png">
 
 ### URL
 - [schemaspyドキュメント](http://localhost:3000/)
