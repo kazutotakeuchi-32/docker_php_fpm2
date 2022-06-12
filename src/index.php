@@ -39,6 +39,7 @@ class Db
     <h1>Hello <?php echo $test; ?></h1>
     <?php echo $test ; ?>
     <?php var_dump($_SERVER); ?>
+    <h2>ojfopjwojrgopwjrepojerwof</h2>
   </div>
 </body>
 </html>
