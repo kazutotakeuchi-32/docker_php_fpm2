@@ -12,10 +12,7 @@ services:
       MYSQL_USER: prosody_user
       MYSQL_PASSWORD: password
       TZ: Asia/Tokyo
-      # MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      # # MYSQL_DATABASE: root
-      # MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      # MYSQL_ROOT_PASSWORD: "yes"
+
     volumes:
       - ./data/mysql:/var/lib/mysql
       - ./containers/mysql/my.cnf:/etc/mysql/my.cnf
@@ -53,11 +50,20 @@ services:
           - "8080:80"
       depends_on:
           - php
-      volumes:
-          - ./src:/tmp
+      # volumes:
+      #     - ./src:/var/www/html
+      depends_on:
+        - db
   php:
       build:
         context: .
         dockerfile: ./containers/php/Dockerfile
+      restart: always
+      volumes:
+          - ./src:/app/tmp
+          # - ./containers/php/www.conf:/usr/local/etc/php-fpm.d/www.conf.default
+          # - ./containers/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
       ports:
           - "8000:80"
+      depends_on:
+        - db

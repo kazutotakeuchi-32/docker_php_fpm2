@@ -1,3 +1,6 @@
+<?php 
+  $test = "name";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +8,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="/style/index.css">
 </head>
 <body>
-  <div class="">
-    hhhh
+  <div class="red">
+    <h1>Hello <?php echo $test; ?></h1>
+    <?php echo $test ; ?>
+    <?php var_dump($_SERVER); ?>
   </div>
 </body>
 </html>
