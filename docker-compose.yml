@@ -37,9 +37,9 @@ services:
     image: nginx:1.19.5-alpine
     container_name: "nginx_schemaspy"
     ports:
-      - "4000:80"
+      - "3000:80"
     volumes:
-      - ./schemaspy/output:/usr/share/nginx/html:ro
+      - ./containers/schemaspy/output:/usr/share/nginx/html:ro
     depends_on:
       - db
   web:
