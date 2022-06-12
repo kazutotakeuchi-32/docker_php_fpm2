@@ -50,8 +50,6 @@ services:
           - "8080:80"
       depends_on:
           - php
-      # volumes:
-      #     - ./src:/var/www/html
       depends_on:
         - db
   php:
@@ -61,8 +59,6 @@ services:
       restart: always
       volumes:
           - ./src:/app/tmp
-          # - ./containers/php/www.conf:/usr/local/etc/php-fpm.d/www.conf.default
-          # - ./containers/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
       ports:
           - "8000:80"
       depends_on:
