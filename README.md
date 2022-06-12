@@ -17,7 +17,11 @@ docker-compose build
 ＃ データベースでテーブルを作成後でないとschemaspyとエラー
 docker-compose up
 ```
-### コンテナ起動時フロー
+### コンテナ図
+
+### URL
+- [schemaspyドキュメント](http://localhost:3000/)
+- [Webサーバ](http://localhost:8080/index.php)
 
 
 ### mysql接続
