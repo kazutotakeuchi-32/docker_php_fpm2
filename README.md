@@ -78,4 +78,7 @@ schemaspy.s=<スキーマ>
  - [Compose における起動順の制御](http://docs.docker.jp/compose/startup-order.html)
  - [【すぐわかる】シェルスクリプトのuntilの使い方](https://eng-entrance.com/linux-shellscript-until)
  - [mysql日本語化](https://pgmemo.tokyo/data/archives/271.html)
+ - [PHP 7 + MySQLでPDOを使用するとcould not found driverエラーが発生する](https://kitigai.hatenablog.com/entry/2019/05/07/003000)
+ - [Dockerにcomposerをインストールする方法の正解](https://blog.hanhans.net/2019/01/08/docker-composer/)
+
 
