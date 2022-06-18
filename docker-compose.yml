@@ -58,7 +58,7 @@ services:
         dockerfile: ./containers/php/Dockerfile
       restart: always
       volumes:
-          - ./src:/app/tmp
+          - ./src:/var/www/html
       ports:
           - "8000:80"
       depends_on:

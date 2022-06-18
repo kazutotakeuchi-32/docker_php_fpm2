@@ -1,4 +1,9 @@
 <?php 
+session_start();
+$_SESSION['user'] = "name";
+$_SESSION['email'] = "email";
+$_SESSION['password'] = "password";
+
 
 class Db
 {
@@ -35,11 +40,6 @@ class Db
   <link rel="stylesheet" href="/style/index.css">
 </head>
 <body>
-  <div class="red">
-    <h1>Hello <?php echo $test; ?></h1>
-    <?php echo $test ; ?>
-    <?php var_dump($_SERVER); ?>
-    <h2>ojfopjwojrgopwjrepojerwof</h2>
-  </div>
+<?php var_dump($_SESSION);?>
 </body>
 </html>
