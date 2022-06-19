@@ -1,5 +1,4 @@
 version: "3.8"
-
 services:
   db:
     build: ./containers/mysql
@@ -12,7 +11,6 @@ services:
       MYSQL_USER: prosody_user
       MYSQL_PASSWORD: password
       TZ: Asia/Tokyo
-
     volumes:
       - ./data/mysql:/var/lib/mysql
       - ./containers/mysql/my.cnf:/etc/mysql/my.cnf
@@ -63,3 +61,4 @@ services:
           - "8000:80"
       depends_on:
         - db
+

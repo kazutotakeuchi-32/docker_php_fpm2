@@ -51,6 +51,29 @@ class ModelBase {
     } catch (\Throwable $th) {
       throw $th;
     }
-}
+  }
+
+  public static function update($params) {
+    try {
+      $db = Db::connect();
+      $sql = "UPDATE %s SET %s WHERE %s = :id";
+    } catch (\Throwable $th) {
+      throw $th;
+    }
+  }
+
+  private static function descTable() {
+    try {
+      $db = Db::connect();
+      $sql = "DESC %s";
+      $sql = sprintf($sql, static::$table);
+      $stmt = $db->prepare($sql);
+      $stmt->execute();
+      $output = $stmt->fetchAll();
+      return $output;
+    } catch (\Throwable $th) {
+      throw $th;
+    }
+  }
 
 }

@@ -1,6 +1,7 @@
 <?php
 class Db
 {
+ 
   public static function connect()
   {
     try {
@@ -19,4 +20,20 @@ class Db
       var_dump($th);
     }
   }
+
+  // デバック用
+ 
+  private static function showTables() {
+    try {
+      $db = static::connect();
+      $sql = "SHOW TABLES" ;
+      $stmt = $db->prepare($sql);
+      $stmt->execute();
+      $output = $stmt->fetchAll();
+      return $output;
+    } catch (\Throwable $th) {
+      throw $th;
+    }
+  }
+
 }
