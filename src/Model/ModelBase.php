@@ -36,4 +36,21 @@ class ModelBase {
       throw $th;
     }
   }
+
+  public static function insert($params) {
+    try {
+      $db = Db::connect();
+      $sql = "INSERT INTO %s (%s) VALUES (%s)";
+      $sql = sprintf($sql, static::$table, implode(',', static::$columns), implode(',', array_keys($params)));
+      $stmt = $db->prepare($sql);
+      foreach ($params as $key => $value) {
+        $stmt->bindParam($key, $value);
+      }
+      $stmt->execute();
+      return "OK";
+    } catch (\Throwable $th) {
+      throw $th;
+    }
+}
+
 }

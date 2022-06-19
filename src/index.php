@@ -1,5 +1,8 @@
 <?php 
+require_once "show.php";
+
 session_start();
+
 $_SESSION['user'] = "name";
 $_SESSION['email'] = "email";
 $_SESSION['password'] = "password";
