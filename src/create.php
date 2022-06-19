@@ -11,9 +11,9 @@ if (is_null($_SESSION["token"]) || is_null($_POST["token"])) {
     return null;
   } 
 
-  $_name = $_POST["name"];
-  $_email = $_POST["email"];
-  $_password = $_POST["password"];
+  $_name = htmlspecialchars($_POST["name"]);
+  $_email = htmlspecialchars($_POST["email"]);
+  $_password =htmlspecialchars($_POST["password"]);
 
 
   User::insert(
