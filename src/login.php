@@ -3,7 +3,7 @@ require "Libs/Token.php";
 // csrf対策
 session_start();
 if (isset($_SESSION["user_id"])) {
-  header('http://localhost:8080/index.php');
+  header('Location: /signup.php');
 }
 $token = Token::generate();
 $_SESSION['token'] = $token;
@@ -19,7 +19,7 @@ $_SESSION['token'] = $token;
 </head>
 <body>
 <div class="wrapper">
-    <form action="create.php" class="form"  method="POST">
+    <form action="/loginAction.php" class="form"  method="POST">
       <input type="hidden" name="token" value="<?php echo $token; ?>">
       <div class="form__group">
         <label for="email">メールアドレス</label>

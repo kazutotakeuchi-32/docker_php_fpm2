@@ -16,9 +16,12 @@ if (is_null($_SESSION["token"]) || is_null($_POST["token"])) {
   $_password =htmlspecialchars($_POST["password"]);
 
 
+  // echo($_email);
+  // exit;
+
   User::insert(
     [
-      ":name" => $_name,
+      ":name" =>  $_name,
       ":email" => $_email,
       ":password" => password_hash($_password, PASSWORD_DEFAULT)
     ]

@@ -5,7 +5,7 @@ class Db
   public static function connect()
   {
     try {
-      $dsn = "mysql:dbname=test;host=db;";
+      $dsn = "mysql:dbname=test;host=db;charset=utf8mb4";
       $user = "root";
       $password = "password";
       $options = [
@@ -13,7 +13,6 @@ class Db
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
       ];
       $dbh = new PDO($dsn, $user, $password, $options);
-      $dbh->query('SET NAMES utf8');
       return $dbh;
     } catch (\Throwable $th) {
       throw $th;

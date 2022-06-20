@@ -17,7 +17,7 @@ $_SESSION['token'] = $token;
 </head>
 <body>
   <div class="wrapper">
-    <form action="create.php" class="form"  method="POST">
+    <form action="/create.php" class="form"  method="POST">
       <input type="hidden" name="token" value="<?php echo $token; ?>">
       <div class="form__group">
         <label for="name">名前</label>
