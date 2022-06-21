@@ -1,5 +1,7 @@
 <?php 
 
+namespace App\Model;
+
 require "Libs/Db.php";
 require "ModelBase.php";
 

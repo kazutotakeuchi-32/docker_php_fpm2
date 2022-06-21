@@ -1,4 +1,6 @@
 <?php
+namespace App\Libs;
+
 class Validator {
   public static validatorEmail($email) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {

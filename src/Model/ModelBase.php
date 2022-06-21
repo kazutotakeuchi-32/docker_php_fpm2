@@ -1,9 +1,10 @@
 <?php
+namespace App\Model;
+
 class ModelBase {
   public static $table = ""; 
   public static $primary_key = "id";
   public static $columns = [];
-
   public static function all() {
     try {
       $db = Db::connect();
