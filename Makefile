@@ -20,6 +20,8 @@ db_log:
 	docker-compose logs -f db
 db_exec:
 	docker-compose exec db /bin/bash
+sql:
+	docker-compose exec db bash -c 'mysql -u root -p$$MYSQL_PASSWORD $$MYSQL_DATABASE'
 php_exec:
 	docker-compose exec php /bin/bash
 schemaspy_run:
