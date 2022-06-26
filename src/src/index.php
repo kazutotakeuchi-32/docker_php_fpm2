@@ -1,6 +1,10 @@
 <?php
+namespace App\src ;
+
 class Animal {
-  public static test(){
-    ehco "Hello World!";
+  public static function test(){
+   echo "Hello World!";
   }
 }
+
+Animal::test();

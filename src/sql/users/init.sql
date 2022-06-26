@@ -9,3 +9,18 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT "ユーザー情報";
 
 
+
+-- カラム追加
+
+ALTER TABLE テーブル名 ADD 新規カラム名 型情報 オプション;
+ALTER TABLE users ADD age int(11) NOT NULL  COMMENT '年齢' ;
+
+-- カラム変更
+ ALTER TABLE [テーブル名] CHANGE [フィールド名] [新フィールド名] [新しい型];
+ ALTER TABLE users CHANGE age new_age int(11);
+
+
+-- カラム削除
+ ALTER TABLE users DROP COLUMN age;
+
+CREATE INDEX user_id_index ON users (id)
