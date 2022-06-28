@@ -24,6 +24,8 @@ sql:
 	docker-compose exec db bash -c 'mysql -u root -p$$MYSQL_PASSWORD $$MYSQL_DATABASE'
 php_exec:
 	docker-compose exec php /bin/bash
+web_exec:
+	docker-compose exec web /bin/sh
 schemaspy_run:
 	docker-compose run schemaspy
 open:
