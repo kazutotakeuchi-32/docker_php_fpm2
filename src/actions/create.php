@@ -1,6 +1,6 @@
 <?php
-require "Model/User.php";
-session_start();
+require("../vendor/autoload.php");
+use App\Model\User;
 
 // tokenが存在するか確認
 if (is_null($_SESSION["token"]) || is_null($_POST["token"])) {

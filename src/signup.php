@@ -22,7 +22,7 @@ $_SESSION['token'] = $token;
 <div class="wrapper">
   <div class="container">
     <h1 class="title">会員登録</h1>
-    <form class="form"  action="/create.php"  method="POST">
+    <form class="form"  action="/actions/create.php"  method="POST">
       <input type="hidden" name="token" value="<?php echo $token; ?>">
       <div class="form-item">
         <p class="form-item-label"><span class="form-item-label-required">必須</span>お名前</p>

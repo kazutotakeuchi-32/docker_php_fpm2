@@ -1,10 +1,6 @@
 <?php 
-
 namespace App\Model;
-
-require "Libs/Db.php";
-require "ModelBase.php";
-
+use Libs\Db;
 
 class User extends ModelBase
  {
@@ -26,4 +22,5 @@ class User extends ModelBase
   }
 
 }
+
 
