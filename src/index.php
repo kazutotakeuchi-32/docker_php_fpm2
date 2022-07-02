@@ -1,6 +1,5 @@
 <?php
 require("vendor/autoload.php");
-
 // echo $output;
 // App\Libs\HelperFunction::hello();
 
@@ -55,7 +54,7 @@ require("vendor/autoload.php");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="/style/index.css">
-  <script src="/style/js/main.js" defer></script>
+  <script src="/js/main.js" defer></script>
 </head> 
 <body>
   <p class="text"></p>

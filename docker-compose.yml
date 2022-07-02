@@ -45,10 +45,11 @@ services:
         context: .
         dockerfile: ./containers/nginx/Dockerfile
       volumes:
-        - ./src/style:/style
+        - ./public:/public
       ports:
           - "8080:80"
       depends_on:
+      
           - php
       depends_on:
         - db
