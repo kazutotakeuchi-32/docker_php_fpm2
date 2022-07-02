@@ -1,7 +1,7 @@
 <?php
 require("vendor/autoload.php");
 // Libs\HelperFunction::hello();
-phpinfo();
+// phpinfo();
 // $result = App\Libs\HelperFunction::hello();
 // echo $result;
 // echo 1+1;
