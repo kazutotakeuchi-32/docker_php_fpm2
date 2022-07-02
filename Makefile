@@ -2,6 +2,8 @@ init:
 	@make build
 	@make up
 build:
+	docker-compose build
+build_no_c:
 	docker-compose build --no-cache
 up:
 	docker-compose up -d
@@ -24,6 +26,8 @@ sql:
 	docker-compose exec db bash -c 'mysql -u root -p$$MYSQL_PASSWORD $$MYSQL_DATABASE'
 php_exec:
 	docker-compose exec php /bin/bash
+web_exec:
+	docker-compose exec web /bin/sh
 schemaspy_run:
 	docker-compose run schemaspy
 open:

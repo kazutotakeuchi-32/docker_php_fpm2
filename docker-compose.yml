@@ -44,9 +44,12 @@ services:
       build:
         context: .
         dockerfile: ./containers/nginx/Dockerfile
+      volumes:
+        - ./public:/public
       ports:
           - "8080:80"
       depends_on:
+      
           - php
       depends_on:
         - db
