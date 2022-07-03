@@ -1,5 +1,6 @@
 <?php
 namespace App\Model;
+use App\Libs\Db;
 
 class ModelBase {
   public static $table = ""; 

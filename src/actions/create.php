@@ -1,39 +1,32 @@
 <?php
-require("../vendor/autoload.php");
+session_start();
+require "../vendor/autoload.php";
 use App\Model\User;
+use App\Libs\Server;
 
-// tokenが存在するか確認
+// リファラーチェック
+
+// tokenが存在するか確認(csrf対策１)
 if (is_null($_SESSION["token"]) || is_null($_POST["token"])) {
   return null;
-}else {
+} else {
   // tokenが一致するか確認
-  if($_SESSION["token"] !== $_POST["token"]) {
+  if ($_SESSION["token"] !== $_POST["token"]) {
     return null;
-  } 
+  }
 
+  // xss対策
   $_name = htmlspecialchars($_POST["name"]);
   $_email = htmlspecialchars($_POST["email"]);
-  $_password =htmlspecialchars($_POST["password"]);
+  $_password = htmlspecialchars($_POST["password"]);
 
-
-  // echo($_email);
-  // exit;
-
-  User::insert(
-    [
-      ":name" =>  $_name,
+  try {
+    User::insert([
+      ":name" => $_name,
       ":email" => $_email,
-      ":password" => password_hash($_password, PASSWORD_DEFAULT)
-    ]
-    );
-
+      ":password" => password_hash($_password, PASSWORD_DEFAULT),
+    ]);
+  } catch (\Throwable $th) {
+    throw $th;
+  }
 }
-
-
-
-
-
-
-
-
-

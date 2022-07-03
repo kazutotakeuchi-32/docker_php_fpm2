@@ -1,20 +1,20 @@
-<?php 
+<?php
 // tokenが存在するか確認
-require("../vendor/autoload.php");
+require "../vendor/autoload.php";
 use App\Model\User;
-
 
 if (is_null($_SESSION["token"]) || is_null($_POST["token"])) {
   return null;
-}else {
+} else {
   // tokenが一致するか確認
-  if($_SESSION["token"] !== $_POST["token"]) {
+  if ($_SESSION["token"] !== $_POST["token"]) {
     return null;
     session_destroy();
-  } 
+  }
 
   $_email = htmlspecialchars($_POST["email"]);
-  $_password =htmlspecialchars($_POST["password"]);
+
+  $_password = htmlspecialchars($_POST["password"]);
 
   if (is_null($_email) || is_null($_password)) {
     return null;
@@ -25,7 +25,7 @@ if (is_null($_SESSION["token"]) || is_null($_POST["token"])) {
   if (is_null($user)) {
     return null;
   }
-  
+
   // パスワードが一致するか確認
   if (password_verify($_password, $user["password"])) {
     $_SESSION["user_id"] = $user["id"];
@@ -34,8 +34,4 @@ if (is_null($_SESSION["token"]) || is_null($_POST["token"])) {
   } else {
     return false;
   }
-
 }
-
-
-

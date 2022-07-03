@@ -3,7 +3,6 @@ namespace App\Libs;
 
 class Db
 {
- 
   public static function connect()
   {
     try {
@@ -12,7 +11,7 @@ class Db
       $password = "password";
       $options = [
         \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-        \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
+        \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
       ];
       $dbh = new \PDO($dsn, $user, $password, $options);
       return $dbh;
@@ -23,11 +22,12 @@ class Db
   }
 
   // デバック用
- 
-  private static function showTables() {
+
+  private static function showTables()
+  {
     try {
       $db = static::connect();
-      $sql = "SHOW TABLES" ;
+      $sql = "SHOW TABLES";
       $stmt = $db->prepare($sql);
       $stmt->execute();
       $output = $stmt->fetchAll();
@@ -36,5 +36,4 @@ class Db
       throw $th;
     }
   }
-
 }
