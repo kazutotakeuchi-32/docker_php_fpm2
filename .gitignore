@@ -3,3 +3,4 @@ schemaspy/output/*
 containers/schemaspy/*
 /vendor/
 src/.env
+node_modules
