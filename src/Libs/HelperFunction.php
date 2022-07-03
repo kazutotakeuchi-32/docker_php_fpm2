@@ -8,6 +8,10 @@ class HelperFunction
     return $x === $y;
   }
 
+  public static function notEqual($x, $y) {
+    return $x !== $y;
+  }
+
   public static function addition($x, $y)
   {
     return $x + $y;

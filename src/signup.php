@@ -1,8 +1,8 @@
 <?php
 
-require("vendor/autoload.php"); 
+require("vendor/autoload.php");
+
 use App\Libs\Token;
-use App\Libs\Server;
 use App\Model\User;
 use App\Libs\Server;
 use App\Controller\UsersController;
@@ -19,11 +19,12 @@ if ( Server::getHttpMethod() === "GET") {
   $token = Token::generate();
   $_SESSION['token'] = $token;
 }else {
-  $params = [
-    []=>"",
-    []=>""
-  ]
-  $datas = UsersController::create() ;
+  // $params = [
+  //   ["m"]=>"ff",
+  //   ["m"]=>"fff"
+  // ];
+
+  $datas = UsersController::create([]) ;
   $errorMssages = $datas["errorMssages"] ;
   $flg = $datas["flg"];
 }

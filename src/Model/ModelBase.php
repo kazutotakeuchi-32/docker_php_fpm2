@@ -82,10 +82,6 @@ class ModelBase {
       return $output;
     } catch (\Throwable $th) {
       throw $th;
-
-
-
-      
     }
   }
 
