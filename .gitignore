@@ -2,3 +2,4 @@ data/*
 schemaspy/output/*
 containers/schemaspy/*
 /vendor/
+src/.env

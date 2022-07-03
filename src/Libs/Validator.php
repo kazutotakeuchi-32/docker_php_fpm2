@@ -9,8 +9,7 @@ class Validator {
       return false;
     }
   }
-
-  public static validatorPassword($password) {
+ public static validatorPassword($password) {
     if (preg_match("/^[a-zA-Z0-9]{6,}$/", $password)) {
       return true;
     } else {

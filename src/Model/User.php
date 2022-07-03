@@ -21,6 +21,10 @@ class User extends ModelBase
     }
   }
 
+  public static create() {
+    
+  }
+
 }
 
 

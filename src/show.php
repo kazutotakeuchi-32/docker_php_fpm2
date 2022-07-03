@@ -1,5 +1,5 @@
 <?php
-require("vendor/autoload.php");
+require "vendor/autoload.php";
 // Libs\HelperFunction::hello();
 // phpinfo();
 // $result = App\Libs\HelperFunction::hello();

@@ -1,5 +1,6 @@
 <?php
 namespace App\Model;
+use App\Libs\Db;
 
 class ModelBase {
   public static $table = ""; 
@@ -81,6 +82,10 @@ class ModelBase {
       return $output;
     } catch (\Throwable $th) {
       throw $th;
+
+
+
+      
     }
   }
 

@@ -1,6 +1,7 @@
 FROM php:7-fpm
 COPY ./src /var/www/html
-RUN apt update && apt install -y procps && apt install -y sudo && apt install -y vim 
+RUN apt update && apt install -y procps && apt install -y sudo && apt install -y vim  
+RUN apt-get install -y git
 # RUN apt-get update && apt-get install  iputils-ping && apt-get install -y  net-tools &&  apt install -y default-mysql-client
 RUN  docker-php-ext-install pdo_mysql
 
